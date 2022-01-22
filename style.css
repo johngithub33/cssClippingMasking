@@ -1,0 +1,12 @@
+
+
+div{
+    height: 50px;
+    width: 100px;
+    background-color: red;
+
+    clip-path: circle(20px at center);
+
+
+}
+
