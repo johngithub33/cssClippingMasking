@@ -1,29 +1,61 @@
 
 
 /* css clip examples: https://bennettfeely.com/clippy/ */
-
-/* clip-path = what should be shown */
+/* https://ishadeed.com/article/clip-path/ */
 
 /* coordinate system: The origin is the top-left corner with the x-axis 
-pointing to the right and the y-axis pointing down. */
+pointing to the right and the y-axis pointing down. 
 
-/* clip-path: circle(100px at 0 0) = the clipped area is a circle with a size of 100px, 
+example: clip-path: circle(100px at 0 0) = the clipped area is a circle with a size of 100px, 
 and its center is positioned at the 0,0 (top left). */
 
+/* Inset - the inset value defines an inset rectangle, TRBL schema. */
+/* Circle - (radius at x-axis y-axis) */
+/* Ellipse - (width height at center) */
+/* Polygon - polygon(x y, x y, x y, x y); */
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    height:100%;
+}
+
+.divbody{
+    height: 100%;
+    background: purple;
+    
+    /* POLYGON(clockwise parameters) = (begin at x y , top right, bottom right, bottm left) */
+    /* https://beyond-paper.com/clip-path-polygons-explained/ */
+    clip-path: polygon(10px 10px, 90% 0, 100% 100%, 0 100%);
+
+}
+
 div{
-    height: 500px;
+    /* height: 500px;
     width: 500px;
-    background-color: red;
+    background-color: red; */
 
-    /* clip-path: circle(5px at center); */
+    /* inset: TRBL */
+    /* clip-path: inset(50px 0px 50px 0px); */
 
-    /* TRBL? */
-    clip-path: polygon(25% 10% 50% 10%);
+    /* circle */
+    /* clip-path: circle( 10px at 50% ); */
 
-    /* clip-path: circle(20px at center); */
-    /* clip-path: ellipse(60px 40px at 75px 30px);  */
-    /* clip-path: polygon(5% 5%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);  */
-    /* clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%); */
+    /* ellipse */
+    /* clip-path: ellipse(100px 20px at 50%); */
 
+    /* polygon */
+    /* clip-path: polygon(5% 5%, 95% 5%, 95% 95%, 5% 95%);; */
+    /* clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%); */
+
+    /* transition: all 1s; */
+}
+
+div:hover{
+    /* clip-path: polygon(0% 0%,0% 0%,0% 0%,50% 50%) */
 }
 
