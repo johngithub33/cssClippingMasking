@@ -2,17 +2,28 @@
 
 /* css clip examples: https://bennettfeely.com/clippy/ */
 
+/* clip-path = what should be shown */
+
+/* coordinate system: The origin is the top-left corner with the x-axis 
+pointing to the right and the y-axis pointing down. */
+
+/* clip-path: circle(100px at 0 0) = the clipped area is a circle with a size of 100px, 
+and its center is positioned at the 0,0 (top left). */
+
 div{
-    height: 50px;
-    width: 100px;
+    height: 500px;
+    width: 500px;
     background-color: red;
 
+    /* clip-path: circle(5px at center); */
+
+    /* TRBL? */
+    clip-path: polygon(25% 10% 50% 10%);
+
     /* clip-path: circle(20px at center); */
-    clip-path: ellipse(60px 40px at 75px 30px); 
+    /* clip-path: ellipse(60px 40px at 75px 30px);  */
     /* clip-path: polygon(5% 5%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);  */
-
-
-
+    /* clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%); */
 
 }
 
